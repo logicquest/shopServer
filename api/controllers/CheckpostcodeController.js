@@ -11,6 +11,8 @@ module.exports = {
 
         check:function(req,res){
             var requestbody= req.body;
+
+            console.log(req.body);
             // Parse the Postcode
             var postcode= requestbody.result.parameters.postcode[0];
             var translateUrl='https://groceries.asda.com/api/user/checkpostcode?listcnc=true&postcode='+postcode;
@@ -27,6 +29,6 @@ module.exports = {
                 });
             
         }
-	
+        
 };
 
