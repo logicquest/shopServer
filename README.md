@@ -1,1 +1,3 @@
-# shopServer
+# shop
+
+a [Sails](http://sailsjs.org) application
