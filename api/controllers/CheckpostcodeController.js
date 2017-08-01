@@ -5,12 +5,13 @@
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
 
-var fetch = require('node-fetch');
+
 
 module.exports = {
 
         check:function(req,res){
             var requestbody= req.body;
+            var fetch = require('node-fetch');
 
             console.log("In the app");
             console.log(req.body);
