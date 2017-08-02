@@ -17,10 +17,10 @@ module.exports = {
             console.log(req.body);
             console.log(requestbody.result.parameters.postcode[0]);
 
-            res.setHeader('Content-Type', 'application/json'); //Requires application/json MIME type
-            res.send(JSON.stringify({ "speech": "Hurray it worked!!", "displayText": "Hurray it worked!!" 
+            // res.setHeader('Content-Type', 'application/json'); //Requires application/json MIME type
+            res.json({ "speech": "Hurray it worked!!", "displayText": "Hurray it worked!!" });
             //"speech" is the spoken version of the response, "displayText" is the visual version
-            }));            
+                        
 
 
             // res.json(JSON.stringify({ "speech": "Hurray it worked!!", "displayText": "Hurray it worked!!" 
