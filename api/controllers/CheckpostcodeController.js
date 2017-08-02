@@ -17,7 +17,9 @@ module.exports = {
             console.log(req.body);
             console.log(requestbody.result.parameters.postcode[0]);
 
-            res.send('Hurray it worked!!');
+            res.json(JSON.stringify({ "speech": "Hurray it worked!!", "displayText": "Hurray it worked!!" 
+            }));
+            
             // Parse the Postcode
             // var postcode= requestbody.result.parameters.postcode[0];
             // var translateUrl='https://groceries.asda.com/api/user/checkpostcode?listcnc=true&postcode='+postcode;
