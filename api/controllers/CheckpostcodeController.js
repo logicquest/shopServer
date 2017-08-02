@@ -18,7 +18,7 @@ module.exports = {
             console.log(requestbody.result.parameters.postcode[0]);
 
             // res.setHeader('Content-Type', 'application/json'); //Requires application/json MIME type
-            res.json({ "speech": "Hurray it worked!!", "displayText": "Hurray it worked!!" });
+            res.json({ speech: "Hurray it worked!!", displayText: "Hurray it worked!!" });
             //"speech" is the spoken version of the response, "displayText" is the visual version
                         
 
