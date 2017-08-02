@@ -18,7 +18,7 @@ module.exports = {
             console.log(requestbody.result.parameters.postcode[0]);
 
             // res.setHeader('Content-Type', 'application/json'); //Requires application/json MIME type
-            res.json({ speech: "Hurray it worked!!", displayText: "Hurray it worked!!" });
+            
             //"speech" is the spoken version of the response, "displayText" is the visual version
                         
 
@@ -27,19 +27,19 @@ module.exports = {
             // }));
             
             // Parse the Postcode
-            // var postcode= requestbody.result.parameters.postcode[0];
-            // var translateUrl='https://groceries.asda.com/api/user/checkpostcode?listcnc=true&postcode='+postcode;
-            // fetch(translateUrl)
-            //     .then(response => response.json())
-            //     .then(data => {
-            //     console.log(data);
-            //     console.log(JSON.stringify(data));
-            //     res.ok("Hurray! We Deliver to the"+ postcode+" postcode");
-            //     })
-            //     .catch(err => {
-            //     console.log(err);
-            //     res.json(err);
-            //     });
+            var postcode= requestbody.result.parameters.postcode[0];
+            var translateUrl='https://groceries.asda.com/api/user/checkpostcode?listcnc=true&postcode='+postcode;
+            fetch(translateUrl)
+                .then(response => response.json())
+                .then(data => {
+                console.log(data);
+                console.log(JSON.stringify(data));
+                res.json({ speech: "Hurray it worked!!", displayText: "Hurray it worked!!" });
+                })
+                .catch(err => {
+                console.log(err);
+                res.json({ speech: "Error", displayText: "Error" });
+                });
         }
         
 };
