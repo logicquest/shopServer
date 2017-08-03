@@ -9,38 +9,38 @@
 
 module.exports = {
 
-        check:function(req,res){
-            var requestbody= req.body;
-            var fetch = require('node-fetch');
+    check: function (req, res) {
+        var requestbody = req.body;
+        var fetch = require('node-fetch');
 
-            console.log("In the app");
-            console.log(req.body);
-            console.log(requestbody.result.parameters.postcode[0]);
+        console.log("In the app");
+        console.log(req.body);
+        console.log(requestbody.result.parameters.postcode[0]);
 
-            // res.setHeader('Content-Type', 'application/json'); //Requires application/json MIME type
-            
-            //"speech" is the spoken version of the response, "displayText" is the visual version
-                        
+        // res.setHeader('Content-Type', 'application/json'); //Requires application/json MIME type
 
+        //"speech" is the spoken version of the response, "displayText" is the visual version
 
-            // res.json(JSON.stringify({ "speech": "Hurray it worked!!", "displayText": "Hurray it worked!!" 
-            // }));
-            
-            // Parse the Postcode
-            var postcode= requestbody.result.parameters.postcode[0];
-            var translateUrl='https://groceries.asda.com/api/user/checkpostcode?listcnc=true&postcode='+postcode;
-            fetch(translateUrl)
-                .then(response => response.json())
-                .then(data => {
+        // res.json(JSON.stringify({ "speech": "Hurray it worked!!", "displayText": "Hurray it worked!!" }));
+
+        // Parse the Postcode
+        var postcode = requestbody.result.parameters.postcode[0];
+        var translateUrl = 'https://groceries.asda.com/api/user/checkpostcode?listcnc=true&postcode=' + postcode;
+        fetch(translateUrl)
+            .then(response => {
+                console.log(response);
+                response.json();
+            })
+            .then(data => {
                 console.log(data);
                 console.log(JSON.stringify(data));
                 res.json({ speech: "Hurray it worked!!", displayText: "Hurray it worked!!" });
-                })
-                .catch(err => {
+            })
+            .catch(err => {
                 console.log(err);
                 res.json({ speech: "Error", displayText: "Error" });
-                });
-        }
-        
+            });
+    }
+
 };
 
