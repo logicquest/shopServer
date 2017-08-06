@@ -1,0 +1,60 @@
+{
+  "api": {
+    "EcommPciMiddleware": {
+      "PciServlet": {
+        "schema": "https",
+        "method": [
+          "POST"
+        ]
+      }
+    }
+  },
+  "validUser1": {
+    "service": {
+      "comm-preferences-app": {
+        "customers": {
+          "B09368E1292042D7997575A4C6AC6A88": {
+            "preferences": {
+              "schema": "https",
+              "method": [
+                "POST"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "validUser2": {
+    "service": {
+      "comm-preferences-app": {
+        "customers": {
+          "B09368E1292042D7997575A4C6AC6A88": {
+            "preferences": {
+              "schema": "https",
+              "method": [
+                "POST"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "invalidUser": {
+    "service": {
+      "comm-preferences-app": {
+        "customers": {
+          "f1d59871-d93d-51db-e043-1cf0f20acdc3": {
+            "preferences": {
+              "schema": "https",
+              "method": [
+                "POST"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
